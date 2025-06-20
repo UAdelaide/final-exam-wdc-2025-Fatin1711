@@ -48,7 +48,7 @@ let db;
 
     // Insert data if table is empty
     await db.execute(`
-
+        CREATE TABLE IF NOT EXITS
       `);
     }
   } catch (err) {
