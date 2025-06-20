@@ -88,7 +88,8 @@ let db;
         request_id INT NOT NULL,
         walker_id INT NOT NULL,
         owner_id INT NOT NULL,
-        location VARCHAR(255) NOT NULL,
+        rating INT CHECK (rating BETWEEN 1 AND 5),
+        comments TEXT,
         status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
