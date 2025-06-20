@@ -145,7 +145,7 @@ let db;
 })();
 
 // Routes to return as JSON
-
+// /api/dogs
 app.get('/', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
