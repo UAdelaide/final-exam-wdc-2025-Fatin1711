@@ -48,7 +48,14 @@ let db;
 
     // Insert data if table is empty
     await db.execute(`
-        CREATE TABLE IF NOT EXITS
+      CREATE TABLE IF NOT EXISTS Users (
+        user_id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) UNIQUE NOT NULL,
+        email VARCHAR(100) UNIQUE NOT NULL,
+        password_has VARCHAR(225) NOT NULL,
+        role ENUM('owner', 'walker') NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
       `);
     }
   } catch (err) {
