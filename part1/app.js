@@ -134,6 +134,8 @@ let db;
         (2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), (SELECT user_id FROM Users WHERE username = 'carol123'), 5, 'Great job!'),
         (3, (SELECT user_id FROM Users WHERE username = 'tommartindal'), (SELECT user_id FROM Users WHERE username = 'samrudge'), 4, 'Well done'),
       `);
+
+      
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
