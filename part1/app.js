@@ -131,10 +131,7 @@ let db;
 
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
-        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('samrudge', 'sam_rudge@gmail,com', 'hashed000', 'owner'),
+        (2, (SELECT user_))
         ('tommartindal', 'tom@yahoo.com', 'hashed111', 'walker')
       `);
     }
