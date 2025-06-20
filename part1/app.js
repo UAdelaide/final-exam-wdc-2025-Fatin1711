@@ -135,7 +135,7 @@ let db;
         (3, (SELECT user_id FROM Users WHERE username = 'tommartindal'), (SELECT user_id FROM Users WHERE username = 'samrudge'), 4, 'Well done'),
       `);
 
-      await db.execute(`UPDATE `)
+      await db.execute(`UPDATE WalkRequests SET status = 'completed` WHERE req)
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
