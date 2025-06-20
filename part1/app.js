@@ -42,6 +42,7 @@ let db;
         email VARCHAR(100) UNIQUE NOT NULL,
         password_has VARCHAR(225) NOT NULL,
         role ENUM('owner', 'walker') NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `);
 
