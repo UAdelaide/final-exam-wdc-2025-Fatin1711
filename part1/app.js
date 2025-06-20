@@ -46,7 +46,6 @@ let db;
       )
     `);
 
-    // Insert data if table is empty
     await db.execute(`
       CREATE TABLE IF NOT EXISTS Dogs (
         dog_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -56,6 +55,18 @@ let db;
         FOREIGN KEY (owner_id) REFERENCES Users(user_id)
       )
     `);
+
+    
+
+    // Insert data if table is empty
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
+    if (rows[0].count === 0) {
+      await db.execute(`
+        INSERT INTO books (title, author) VALUES
+        ('1984', 'George Orwell'),
+        ('To Kill a Mockingbird', 'Harper Lee'),
+        ('Brave New World', 'Aldous Huxley')
+      `);
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
