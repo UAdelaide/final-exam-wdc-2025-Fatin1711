@@ -135,7 +135,7 @@ let db;
         (3, (SELECT user_id FROM Users WHERE username = 'tommartindal'), (SELECT user_id FROM Users WHERE username = 'samrudge'), 4, 'Well done'),
       `);
 
-      await db.execute(`UPDATE WalkRequests SET status = 'completed` WHERE request_id IN (2, 3));
+      await db.execute(`UPDATE WalkRequests SET status = 'completed' WHERE request_id IN (2, 3));
     }
 
     console.log('Database ready and test data loaded.');
