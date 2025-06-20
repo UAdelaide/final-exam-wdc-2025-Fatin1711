@@ -52,9 +52,7 @@ let db;
         dog_id INT AUTO_INCREMENT PRIMARY KEY,
         owner_ide INT NOT NULL,
         name VARCHAR(50) NOT NULL,
-        email VARCHAR(100) UNIQUE NOT NULL,
-        password_has VARCHAR(225) NOT NULL,
-        role ENUM('owner', 'walker') NOT NULL,
+        size ENUM('small', 'medium', '') NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `);
