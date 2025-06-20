@@ -110,6 +110,8 @@ let db;
         ('samrudge', 'sam_rudge@gmail,com', 'hashed000', 'owner'),
         ('tommartindal', 'tom@yahoo.com', 'hashed111', 'walker')
       `);
+
+      
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
