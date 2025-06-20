@@ -86,8 +86,8 @@ let db;
       CREATE TABLE IF NOT EXISTS WalkRatings (
         rating_id INT AUTO_INCREMENT PRIMARY KEY,
         request_id INT NOT NULL,
-        requested_time DATETIME NOT NULL,
-        duration_minutes INT NOT NULL,
+        walker_id INT NOT NULL,
+        owner_id INT NOT NULL,
         location VARCHAR(255) NOT NULL,
         status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
