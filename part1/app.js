@@ -91,7 +91,7 @@ let db;
         rating INT CHECK (rating BETWEEN 1 AND 5),
         comments TEXT,
         rated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (_id) REFERENCES Dogs(dog_id)
+        FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id)
       )
     `);
 
