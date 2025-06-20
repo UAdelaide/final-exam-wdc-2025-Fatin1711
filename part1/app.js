@@ -145,6 +145,7 @@ let db;
 })();
 
 // Routes to return as JSON
+
 // /api/dogs
 app.get('/api/dogs', async (req, res) => {
   try {
@@ -155,7 +156,7 @@ app.get('/api/dogs', async (req, res) => {
         `);
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
 
