@@ -50,7 +50,8 @@ let db;
     await db.execute(`
       CREATE TABLE IF NOT EXISTS Dogs (
         dog_id INT AUTO_INCREMENT PRIMARY KEY,
-        ownerusername VARCHAR(50) UNIQUE NOT NULL,
+        owner_ide INT NOT NULL,
+        name VARCHAR(50) NOT NULL,
         email VARCHAR(100) UNIQUE NOT NULL,
         password_has VARCHAR(225) NOT NULL,
         role ENUM('owner', 'walker') NOT NULL,
