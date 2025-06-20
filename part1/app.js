@@ -92,6 +92,9 @@ let db;
         comments TEXT,
         rated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id)
+        FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id)
+        FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id)
+
       )
     `);
 
