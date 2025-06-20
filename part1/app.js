@@ -41,7 +41,7 @@ let db;
         username VARCHAR(50) UNIQUE NOT NULL,
         email VARCHAR(100) UNIQUE NOT NULL,
         password_has VARCHAR(225) NOT NULL,
-        role ENUM('owner)  VARCHAR(50) UNIQUE NOT NULL,
+        role ENUM('owner', 'walker') NOT NULL,
       )
     `);
 
