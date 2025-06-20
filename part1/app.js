@@ -182,7 +182,8 @@ app.get('/api/walkers/summary', async (req, res) => {
     const [rows] = await db.execute(`
         SELECT
         u.username AS owner_username,
-        COUNT(r.rating_id) AS total
+        COUNT(r.rating_id) AS total_ratings,
+        ROUND(AVG(r.rating), 1)
         FROM Dogs d
         JOIN Users u ON d.owner_id = u.user_id
         `);
