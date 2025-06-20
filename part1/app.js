@@ -38,7 +38,7 @@ let db;
     await db.execute(`
       CREATE TABLE IF NOT EXISTS Users (
         user_id INT AUTO_INCREMENT PRIMARY KEY,
-        username VARCHAR(50)
+        username VARCHAR(50) UNIQUE NOT NULL
         title VARCHAR(255),
         author VARCHAR(255)
       )
