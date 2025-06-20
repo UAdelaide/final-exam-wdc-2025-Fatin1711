@@ -47,13 +47,8 @@ let db;
     `);
 
     // Insert data if table is empty
-    await db.execute('SELECT COUNT(*) AS count FROM books');
-    if (rows[0].count === 0) {
-      await db.execute(`
-        INSERT INTO books (title, author) VALUES
-        ('1984', 'George Orwell'),
-        ('To Kill a Mockingbird', 'Harper Lee'),
-        ('Brave New World', 'Aldous Huxley')
+    await db.execute(`
+
       `);
     }
   } catch (err) {
