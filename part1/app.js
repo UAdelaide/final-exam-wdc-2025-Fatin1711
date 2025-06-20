@@ -40,8 +40,8 @@ let db;
         user_id INT AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(50) UNIQUE NOT NULL,
         email VARCHAR(100) UNIQUE NOT NULL,
+        password_has VARCHAR(225) NOT NULL,
         username VARCHAR(50) UNIQUE NOT NULL,
-        author VARCHAR(255)
       )
     `);
 
