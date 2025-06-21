@@ -33,7 +33,8 @@
           try {
             const response = await fetch('/auth/login', {
               methid: 'POST',
-              headers: { 'Content-Type': ''}
+              headers: { 'Content-Type': 'applocation/json' },
+              body: JSON.stringify({ username: this.username})
             })
           }
         }
