@@ -8,6 +8,7 @@ const db = mysql.createPool({
     user: 'root',
     password: '',
     database: 'DogWalkService'
+});
     router.get('/', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
