@@ -26,7 +26,8 @@ router.post('/login', async (req, res) => {
     // Set session
     req.session.user = {
         id: rows[0].user_id,
-        user
+        username: rows[0].username,
+        role: rows[0].role
     }
 
 router.get('/me', (req, res) => {
