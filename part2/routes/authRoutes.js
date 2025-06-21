@@ -4,7 +4,10 @@ const mysql = require('mysql2/promise');
 
 // Database connection
 const db = mysql.createPool({
-    host: 'l'
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'DogWalkService'
     router.get('/', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
