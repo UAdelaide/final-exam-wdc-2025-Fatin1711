@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
     };
 
     // Redirect based on role
-    cons
+    const redirectPath = rows[0].role === 'owner'
 
 router.get('/me', (req, res) => {
   if (!req.session.user) {
