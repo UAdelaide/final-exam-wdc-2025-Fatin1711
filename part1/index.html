@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOG OF THE DAY - WELCOME TO DOG WALK</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <style>
+    body {
+      font-family: Comic Sans MS, cursive;
+      background: linear-gradient(to right, yellow, lime, pink, cyan);
+      animation: flash 0.5s infinite;
+      overflow-x: scroll;
+    }
+    @keyframes flash {
+      0% { background-color: red; }
+      50% { background-color: orange; }
+      100% { background-color: red; }
+    }
+    .button {
+      font-size: 40px;
+      padding: 20px;
+      border: 5px dotted green;
+      background: hotpink;
+      cursor: none;
+    }
+    img {
+      width: 800px;
+      height: 600px;
+      border: 10px double purple;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>DOGWALK SUPER MEGA PORTAL DOGPAGE 2025</h1>
+    <h2 v-for="i in 5" :key="i">DOG OF THE DAY!!!!</h2>
+    <div>
+      <button class="button" @click="loadDog">CLICK 4 DOG</button>
+      <button class="button" @click="scrollToTop">GO TOP AGAIN</button>
+    </div>
+    <div v-if="dogUrl">
+      <img :src="dogUrl">
+      <p>This is the best dog ever because it's the DOG OF THE DAY!!! WOW!!!</p>
+      <marquee behavior="scroll" direction="right" scrollamount="30">DOGS ARE AWESOME DOGS ARE AWESOME DOGS ARE AWESOME</marquee>
+    </div>
+  </div>
+
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          dogUrl: null
+        };
+      },
+      methods: {
+        async loadDog() {
+          const res = await fetch('https://dog.ceo/api/breeds/image/random');
+          const data = await res.json();
+          this.dogUrl = data.message;
+        },
+        scrollToTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
