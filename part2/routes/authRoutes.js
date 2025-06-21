@@ -10,8 +10,8 @@ const db = mysql.createPool({
     database: 'DogWalkService'
 });
 
-// POST a new user (simple signup)
-router.post('/register', async (req, res) => {
+// POST /auth/login
+router.post('/login', async (req, res) => {
   const { username, email, password, role } = req.body;
 
   try {
