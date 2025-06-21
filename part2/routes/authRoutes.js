@@ -12,10 +12,10 @@ const db = mysql.createPool({
 
 // POST /auth/login
 router.post('/login', async (req, res) => {
-  const { username, email, password, role } = req.body;
+  const { username, password } = req.body;
 
   try {
-    const [result] = await db.query(`
+    const [rows] = await db.query(`
       INSERT INTO Users (username, email, password_hash, role)
       VALUES (?, ?, ?, ?)
     `, [username, email, password, role]);
