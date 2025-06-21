@@ -11,7 +11,11 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Session middleware
-app.use(session)
+app.use(session({
+    secret: 'secretKeyForSession',
+    resave: false,
+    
+}))
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
