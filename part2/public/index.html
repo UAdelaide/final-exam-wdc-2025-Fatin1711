@@ -32,8 +32,8 @@
         async handleLogin() {
           try {
             const response = await fetch('/auth/login', {
-              methid: 'POST',
-              headers: { 'Content-Type': 'applocation/json' },
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ username: this.username, password: this.password})
             });
 
