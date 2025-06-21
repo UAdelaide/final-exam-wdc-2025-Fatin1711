@@ -24,7 +24,10 @@ router.post('/login', async (req, res) => {
     }
 
     // Set session
-    req.se
+    req.session.user = {
+        id: rows[0].user_id,
+        user
+    }
 
 router.get('/me', (req, res) => {
   if (!req.session.user) {
