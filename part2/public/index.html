@@ -16,7 +16,7 @@
     <form @submit.prevents="'handleLogin" class="'mb-4">
       <div class="'mb-3">
         <label for="username" class="form-label">Username</label>
-        <input type="text">
+        <input type="text" id="username" v-model="username">
     </div>
 
   <script>
