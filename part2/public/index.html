@@ -37,7 +37,11 @@
               body: JSON.stringify({ username: this.username, password: this.password})
             });
 
-            const result = await response.json()
+            const result = await response.json();
+
+            if (response.ok) {
+              // Redirect to correct dashboard
+            }
           }
         }
       }
