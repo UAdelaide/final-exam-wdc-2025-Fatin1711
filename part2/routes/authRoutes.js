@@ -15,8 +15,8 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const [rows] = await db.query(`
-      INSERT INTO Users (username, email, password_hash, role)
+    const [rows] = await db.execute(
+      SELECT * FROM Users (username, email, password_hash, role)
       VALUES (?, ?, ?, ?)
     `, [username, email, password, role]);
 
