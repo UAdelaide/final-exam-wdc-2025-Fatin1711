@@ -3,7 +3,9 @@ const router = express.Router();
 const mysql = require('mysql2/promise');
 
 // Database connection
-const db = mysql.createPoolrouter.get('/', async (req, res) => {
+const db = mysql.createPool({
+    host: 'l'
+    router.get('/', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
     res.json(rows);
