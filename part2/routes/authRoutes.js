@@ -17,7 +17,9 @@ router.post('/login', async (req, res) => {
   try {
     const [rows] = await db.execute(
       'SELECT * FROM Users WHERE username = ? AND password_hash = ?',
-      [user]
+      [username, password]
+    );
+    if (rows)
     `, [username, email, password, role]);
 
     res.status(201).json({ message: 'User registered', user_id: result.insertId });
