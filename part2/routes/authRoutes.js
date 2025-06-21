@@ -19,7 +19,9 @@ router.post('/login', async (req, res) => {
       'SELECT * FROM Users WHERE username = ? AND password_hash = ?',
       [username, password]
     );
-    if (rows)
+    if (rows.length === 0) {
+        retu\ res.status(401)
+    }
     `, [username, email, password, role]);
 
     res.status(201).json({ message: 'User registered', user_id: result.insertId });
