@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
-const authRoutes = require
+const authRoutes = require('./routes/authRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
