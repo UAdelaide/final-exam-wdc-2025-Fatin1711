@@ -22,13 +22,9 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
         retu\ res.status(401).json({ error: 'Invalid username or password'});
     }
-    `, [username, email, password, role]);
 
-    res.status(201).json({ message: 'User registered', user_id: result.insertId });
-  } catch (error) {
-    res.status(500).json({ error: 'Registration failed' });
-  }
-});
+    // Set session
+    req.se
 
 router.get('/me', (req, res) => {
   if (!req.session.user) {
