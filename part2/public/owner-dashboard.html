@@ -123,7 +123,9 @@
             if (res.ok) {
               window.location.href = '/index.html';
             }
-          } catch (err)
+          } catch (err) {
+            error.value = 'Logout failed';
+          }
         }
 
         onMounted(() => {
@@ -136,6 +138,7 @@
           message,
           error,
           submitWalkRequest
+          logout
         };
       }
     }).mount('#app');
