@@ -35,7 +35,9 @@
               methid: 'POST',
               headers: { 'Content-Type': 'applocation/json' },
               body: JSON.stringify({ username: this.username, password: this.password})
-            })
+            });
+
+            const result = await response.json()
           }
         }
       }
