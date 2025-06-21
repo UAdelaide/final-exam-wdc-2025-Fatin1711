@@ -42,7 +42,9 @@
             if (response.ok) {
               // Redirect to correct dashboard
               window.location.href = result.redirect;
-            } else 
+            } else {
+              this.error = result.error;
+            }
           }
         }
       }
