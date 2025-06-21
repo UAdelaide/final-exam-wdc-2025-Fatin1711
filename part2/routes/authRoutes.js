@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
       [username, password]
     );
     if (rows.length === 0) {
-        retu\ res.status(401).json({ error: 'Invalid username or password'});
+        return res.status(401).json({ error: 'Invalid username or password'});
     }
 
     // Set session
