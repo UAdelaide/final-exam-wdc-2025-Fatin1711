@@ -32,7 +32,8 @@
         async handleLogin() {
           try {
             const response = await fetch('/auth/login', {
-              methid: ''
+              methid: 'POST',
+              headers: { 'Content-Type': ''}
             })
           }
         }
