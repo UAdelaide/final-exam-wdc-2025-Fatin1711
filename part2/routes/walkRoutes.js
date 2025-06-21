@@ -59,4 +59,20 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
+router.get('/owner/dogs', async (req, res) => {
+  try {
+    if (!req.session || !req.session.user || req.session.user.role !== 'owner') {
+      return res.status(401).json({ error: 'Unauthorised' });
+    }
+
+    const [rows] = await req.db.execute(`
+      SELECT dog_id, name, size FROM Dogs WHERE owner_id = ?
+    `, [req.session.user.user_id]);
+
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch dogs' });
+  }
+});
+
 module.exports = router;
